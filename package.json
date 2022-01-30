@@ -1,0 +1,26 @@
+{
+  "name": "dirty-song-meter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.3",
+    "axios": "^0.24.0",
+    "babel-helpers": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "core-js": "^3.6.5",
+    "netlify-cli": "^8.0.5",
+    "qs": "^6.10.1",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0"
+  }
+}
