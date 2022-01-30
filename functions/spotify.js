@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
       const response = await axios.post('https://accounts.spotify.com/api/token',params.toString(),{
             headers: { 
               'Content-Type': 'application/x-www-form-urlencoded',
-              'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64'))
+              'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
             }
       });
       console.log("did request")
