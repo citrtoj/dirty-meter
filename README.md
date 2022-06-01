@@ -1,5 +1,5 @@
 # dirty-meter
-First Vue project. Uses Netlify Functions, the Spotify API and the lyrics.ovh API. Available [here](dirty-meter.netlify.app)
+First Vue project. Uses Netlify Functions, the Spotify API and the lyrics.ovh API. Available [here](https://dirty-meter.netlify.app)
 
 ## Project setup
 ```
