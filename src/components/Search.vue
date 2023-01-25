@@ -7,23 +7,19 @@
 
 <script>
 export default {
-    name: 'Search',
-    data() {
-        return {
+    name:'Search',
+    data(){
+        return{
             text:''
         }
     },
     methods:{
-        onSubmit (e) {
+        onSubmit(e){
             e.preventDefault();
-            if (!this.text){
-                return;
-            }
-            else {
-                const title = this.text;
-                this.text = '';
-                this.$emit('search-title', title)
-            }
+            if(!this.text){return}
+            else{const title = this.text;
+            this.text='';
+            this.$emit('search-title',title)}
         }
     }
 }

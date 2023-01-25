@@ -47,7 +47,7 @@
   </div>
   <div class="flex column">
     <div class="flex bottom">
-      <div class="song-results" v-if="boolResults != 1">
+      <div class="song-results"  v-if="boolResults">
         <Song @error="errorHandle" @lyrics-box="setLyrics" v-bind:key="song.id" v-for="song in songs" :songTitle="song.name"  :artist="song.artists" :album="song.album.name"/>
       </div>
       <LyricMessage class="lyrics" :currentSong="currentSong" :currentArtists="currentArtists" :songLyrics="percentage" :boolLyrics="boolLyrics" :swearCount="swearCount"/>
@@ -98,11 +98,12 @@ export default {
     setLyrics(lyrics, title, artist) {
       this.boolLyrics = true;
       this.checkMobileLayout();
-      window.scrollTo({
+      window.scrollTo ({
         top: 0,
         left: 0,
         behavior: 'smooth'
       });
+      
       if (lyrics.lyrics === undefined) {
         this.reset();
         return;
@@ -126,7 +127,7 @@ export default {
       }
     },
 
-    async searchTitle(title) {
+    async searchTitle(title){
       this.boolResults = true;
       this.boolLyrics = false;
       window.scrollTo({
@@ -134,11 +135,12 @@ export default {
         bottom: 0,
         behavior: 'smooth'
       });
+
       fetch('.netlify/functions/spotify').then(function (resp) {
         return resp.json();
       })
-      .then((response) => {
-        var auth = response.data.access_token;
+      .then((data) => {
+        var auth=data.data.access_token;
         return fetch(`https://api.spotify.com/v1/search?q=${title}` + '&type=track&limit=10', {
           headers: {
             'Authorization': `Bearer ${auth}`,
@@ -150,9 +152,10 @@ export default {
       .then(response => {
         const songItems = response.tracks.items;
         this.songs = songItems;
-        this.checkMobileLayout();
+        this.mobileSongs();
       }).catch(function (err) {
         console.log('something went wrong', err);
+
       });
     },
   }
