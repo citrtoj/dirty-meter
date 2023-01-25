@@ -47,7 +47,7 @@
   </div>
   <div class="flex column">
     <div class="flex bottom">
-      <div class="song-results"  v-if="boolResults">
+      <div class="song-results" v-if="boolResults == true">
         <Song @error="errorHandle" @lyrics-box="setLyrics" v-bind:key="song.id" v-for="song in songs" :songTitle="song.name"  :artist="song.artists" :album="song.album.name"/>
       </div>
       <LyricMessage class="lyrics" :currentSong="currentSong" :currentArtists="currentArtists" :songLyrics="percentage" :boolLyrics="boolLyrics" :swearCount="swearCount"/>
