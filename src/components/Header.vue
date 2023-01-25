@@ -26,9 +26,9 @@ export default {
   justify-content:center;
 }
 h1{
-    font-weight: 800;
-    font-size:3.3em;
-    line-height:.6em;
+  font-weight: 800;
+  font-size:3.3em;
+  line-height:.6em;
 }
 h4,h6{
   margin:.5rem;

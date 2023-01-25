@@ -22,7 +22,6 @@ export default {
                 this.$emit('lyrics-box',response, this.songTitle, this.artist.map(({ name }) => name).join(', '));
                 }).catch(err => {this.$emit('error')
             });
-
         },
     }
 };
