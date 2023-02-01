@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import { assertStandardized } from '@babel/types';
+const azlyrics = require('js-azlyrics')
 export default {
     name:'Song',
     props:{
@@ -16,10 +18,9 @@ export default {
     },
     methods:{
         async searchSong() {
-            //TODO: use https://github.com/larryamiel/node_lyrics_scraper instead
-            //since lyrics.ovh seems to not work at all anymore
-            //once I figure out what I was even doing in all of the code for this
-            fetch(`https://api.lyrics.ovh/v1/${this.artist[0].name}/${this.songTitle}`)
+            
+            //TODO: change how the lyrics work
+            fetch(`https://some-random-api.ml/lyrics?title=${this.artist[0].name + " " + this.songTitle}`)
                 .then(response => response.json())
                 .then(response => {
                 this.$emit('lyrics-box', response, this.songTitle, this.artist.map(({ name }) => name).join(', '));
