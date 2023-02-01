@@ -3,38 +3,38 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  height:100%;
-  display:flex;
-  justify-content:center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
-.flex{
-  display:flex;
+.flex {
+  display: flex;
 }
 
-.song-results, .lyrics{
+.song-results, .lyrics {
   flex: 1 1 0px;
-  margin:1em;
+  margin: 1em;
 }
-.lyrics{
-  background-color:rgb(236, 236, 236);
-  height:fit-content;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  padding:1em;
+.lyrics {
+  background-color: rgb(236, 236, 236);
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
 }
-.column{
-  flex-direction:column;
+.column {
+  flex-direction: column;
 }
-.footer{
-  width:100%;
-  justify-self:center;
-  align-self:center;
-  display:flex;
+.footer {
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+  display: flex;
 }
-.btn,.search-song,.lyrics,.song{
-  border-radius:8px;
+.btn, .search-song, .lyrics, .song{
+  border-radius: 8px;
 }
 </style>
 
@@ -156,8 +156,7 @@ export default {
         this.songs = songItems;
         this.mobileSongs();
       }).catch(function (err) {
-        console.log('something went wrong', err);
-
+        console.log('Something went wrong:', err);
       });
     },
   }

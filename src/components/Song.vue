@@ -8,18 +8,15 @@
 
 <script>
 import { assertStandardized } from '@babel/types';
-const azlyrics = require('js-azlyrics')
 export default {
-    name:'Song',
-    props:{
-        songTitle:String,
-        artist:Array,
-        album:String,
+    name: 'Song',
+    props: {
+        songTitle: String,
+        artist: Array,
+        album: String,
     },
-    methods:{
+    methods: {
         async searchSong() {
-            
-            //TODO: change how the lyrics work
             fetch(`https://some-random-api.ml/lyrics?title=${this.artist[0].name + " " + this.songTitle}`)
                 .then(response => response.json())
                 .then(response => {
@@ -32,13 +29,14 @@ export default {
 </script>
 
 <style scoped>
-    .song{text-align:left;
-    padding:.5rem;
-    background-color:rgb(236, 236, 236);
-    margin-bottom:.5rem;
-        cursor:pointer;
+    .song {
+        text-align: left;
+        padding: .5rem;
+        background-color: rgb(236, 236, 236);
+        margin-bottom: .5rem;
+        cursor: pointer;
     }
-    h2,h4{
-        margin:0.5rem;
+    h2, h4 {
+        margin: 0.5rem;
     }
 </style>

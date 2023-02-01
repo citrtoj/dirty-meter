@@ -17,7 +17,7 @@ export default {
 
 
 <style scoped>
-.header{
+.header {
   font-size:1.25em;
   margin:1em;
   display:flex;
@@ -25,13 +25,13 @@ export default {
   align-items:center;
   justify-content:center;
 }
-h1{
+h1 {
   font-weight: 800;
-  font-size:3.3em;
-  line-height:.6em;
+  font-size: 3.3em;
+  line-height: .6em;
 }
-h4,h6{
-  margin:.5rem;
-  width:80%;
+h4, h6 {
+  margin: .5rem;
+  width: 80%;
 }
 </style>
